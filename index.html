@@ -51,7 +51,7 @@
   		list-style: none;
 	}
     
-	ol > li:before {
+    ol > li:before {
   		content: counter(list, upper-alpha) ") ";
   		counter-increment: list;
         padding-right: 50px;
@@ -61,9 +61,23 @@
     	padding: 10px 0;
     }
     
-    li:hover {
+    li:hover, li:focus {
     	background-color: var(--lightGray);
         cursor: pointer;
+    }
+    
+    .buttonThings button {
+    	background-color: var(--darkGray);
+        color: #fff;
+        font-size: 30px;
+    }
+    
+    .buttonThings {
+    	display: none;
+    }
+    
+    .crossOut {
+    	text-decoration: line-through;
     }
 </style>
 <body>
@@ -74,24 +88,47 @@
     <div class="question">If \(\frac{{x - 1}}{{3}} = k\) and \(k=3\), what is the value of \(x\)?</div>
     <div class="options">
     	<ol class="options">
-        	<li class="incorrect">2</li>
-            <li class="incorrect">4</li>
-            <li class="incorrect">9</li>
-            <li class="correct">10</li>
+        	<li class="incorrect">2<div class="buttonThings"><button class="crossoutBtn">Cross Out</button><button class="confirmBtn">Confirm</button></div></li>
+            <li class="incorrect">4<div class="buttonThings"><button class="crossoutBtn">Cross Out</button><button class="confirmBtn">Confirm</button></div></li>
+            <li class="incorrect">9<div class="buttonThings"><button class="crossoutBtn">Cross Out</button><button class="confirmBtn">Confirm</button></div></li>
+            <li class="correct">10<div class="buttonThings"><button class="crossoutBtn">Cross Out</button><button class="confirmBtn">Confirm</button></div></li>
         </ol>
     </div>
+
 </div>
+
 <script>
 $(document).ready(function() {
-  $("li").click(function() {
-    if ($(this).hasClass("incorrect")) {
-      $(this).css("background-color", "var(--incorrectCol)");
-    }
-    
-    if ($(this).hasClass("correct")) {
-      $(this).css("background-color", "var(--correctCol)");
-    }
-  });
+	$("li").click(function() {
+		$(this).find(".buttonThings").toggle('slow');
+	});
+  
+	$(".confirmBtn").click(function() {
+		var thisli = $(this).closest("li");
+      
+		if (thisli.hasClass("incorrect")) {
+        	thisli.css("background-color", "var(--incorrectCol)");
+            
+		}
+        
+        if (thisli.hasClass("correct")) {
+        	thisli.css("background-color", "var(--correctCol)");
+		}
+        
+        $(this).hide();
+        
+        //thisli.find(".buttonThings").hide();
+	});
+  
+	$(".crossoutBtn").click(function() {
+		var thisli = $(this).closest("li");
+        //thisli.find(".buttonThings").hide();
+        
+		thisli.toggleClass("crossOut");
+        $(this).text(function(i, text) {
+        	return text === "Cross Out" ? "Uncross Out" : "Cross Out";
+      	});
+	});
 });
 </script>
 </body>
