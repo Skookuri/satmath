@@ -19,7 +19,7 @@
         "QUESTIONNUM": "3",
         "QUESTION": "\\(15x - 3y = 7\\\\-15x + 4y = 2\\)Which ordered pair \\((x, y)\\) satisfies the system of equations above?",
         "IMAGE": "",
-        "ANSWERS": ["\\((\\frac{{34}}{{15}}, 9)\\)", "\\(3,\\frac{{38}}{{3}}\\)", "\\((0, \\frac{{1}}{{2}})\\)", "\\((1, \\frac{{8}}{{3}})\\)"],
+        "ANSWERS": ["\\((\\frac{{34}}{{15}}, 9)\\)", "\\((3,\\frac{{38}}{{3}})\\)", "\\((0, \\frac{{1}}{{2}})\\)", "\\((1, \\frac{{8}}{{3}})\\)"],
         "ANSWERKEY": ["correct", "incorrect", "incorrect", "incorrect"]
       },
       {
