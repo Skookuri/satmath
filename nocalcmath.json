@@ -10,7 +10,7 @@
       },
       {
         "QUESTIONNUM": "2",
-        "QUESTION": "\\(7x - 4y = 40\\)<br><br>\\(6x - 4y = 32\\)<br><br>If \\((x, y)\\) satisifies the system of equations above, what is the value of \\(y\\)?",
+        "QUESTION": "\\(7x - 4y = 40&lt;br&gt;&lt;br&gt;6x - 4y = 32&lt;br&gt;&lt;br&gt;If \\((x, y)\\) satisfies the system of equations above, what is the value of \\(y\\)?",
         "IMAGE": "",
         "ANSWERS": ["\\(-\\frac{{3}}{{10}}\\)", "\\(\\frac{{1}}{{2}}\\)", "\\(4\\)", "\\(8\\)"],
         "ANSWERKEY": ["incorrect", "incorrect", "correct", "incorrect"]
